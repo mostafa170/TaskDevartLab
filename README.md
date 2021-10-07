@@ -5,6 +5,8 @@ using MVVM &amp; retrofit &amp; dataBinding &amp;recycler view &amp;card view &a
 <br/>
 2- create google script to create api to google sheets like:https://script.google.com/d/13EGmpLksxWYfErTy6p59LiDJLVP6liJGH1Vk82qIl82vZADGagjEsQN_/edit?usp=sharing <br/>
 ![2](https://user-images.githubusercontent.com/19371586/136419150-a879e0af-04a8-4eee-a2b1-d044dc53cde8.PNG)
+<br/>
+Copy this is code to create api at google script 👇👇👇👇👇👇👇:<br/>
 var id = '15H-hd0z2h6OIf_g5e-33fEY6jMxpYJPGs_SYVSoZEa4';
 var name = 'Sheet1';
 
@@ -48,3 +50,7 @@ function convertSheet2Json(sheet) {
   }
   return jsonArray;
 }
+<br/>
+<br/>
+<br/>
+<br/>
