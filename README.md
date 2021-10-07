@@ -52,5 +52,7 @@ function convertSheet2Json(sheet) {
 }
 <br/>
 <br/>
+3-after create google sheets and add code in script change ID_SHEETS to id sheets and NAME_SHEETS to sheet name
 <br/>
+4- change base url at ServiceBuilder and change two string user_content_key and lib HomeRepo at code in android studio than run code😉😉😉😉😉😉
 <br/>
