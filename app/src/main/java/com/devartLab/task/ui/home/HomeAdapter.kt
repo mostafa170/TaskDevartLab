@@ -8,7 +8,7 @@ import com.devartLab.task.model.HomeResponseModel
 
 
 class HomeAdapter(
-    private var dataList: List<HomeResponseModel>,
+    private var dataList: ArrayList<HomeResponseModel>,
     var onHomeItemClicked: OnHomeItemClicked
 ) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
@@ -31,6 +31,16 @@ class HomeAdapter(
 
     }
 
+    fun removeItem(item : HomeResponseModel){
+        dataList.remove(item)
+        notifyDataSetChanged()
+    }
+
+    fun addData(dataList: ArrayList<HomeResponseModel>){
+        this.dataList = dataList
+        notifyDataSetChanged()
+    }
+
 
     class ViewHolder(private var binding: ItemOrdersBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -41,13 +51,14 @@ class HomeAdapter(
                 onHomeItemClicked.onItemClicked(item)
             }
             binding.idRemoveTrip.setOnClickListener {
-
+                onHomeItemClicked.onDeleteItemClicked(item)
             }
         }
 
     }
     interface OnHomeItemClicked {
         fun onItemClicked(dataList: HomeResponseModel)
+        fun onDeleteItemClicked(dataList: HomeResponseModel)
     }
 
 

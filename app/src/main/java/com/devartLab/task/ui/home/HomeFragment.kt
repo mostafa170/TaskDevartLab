@@ -17,6 +17,7 @@ class HomeFragment : Fragment(), HomeAdapter.OnHomeItemClicked {
 
     lateinit var binding : FragmentHomeBinding
     val viewModel: HomeViewModel by viewModels()
+    lateinit var adapter : HomeAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,11 +27,13 @@ class HomeFragment : Fragment(), HomeAdapter.OnHomeItemClicked {
         binding = FragmentHomeBinding.inflate(inflater)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        adapter = HomeAdapter(ArrayList(),this)
 //        init()
         handleObserver()
     }
@@ -39,7 +42,10 @@ class HomeFragment : Fragment(), HomeAdapter.OnHomeItemClicked {
         viewModel.homeList.observe(viewLifecycleOwner,{
             if(it.isNotEmpty()){
                 binding.progressBar.visibility= View.INVISIBLE
-                binding.recyOrders.adapter = HomeAdapter(it,this )
+                binding.recyOrders.adapter = adapter
+                adapter.addData(it as ArrayList<HomeResponseModel>)
+                adapter.notifyDataSetChanged()
+
             }else{
                 binding.tvOrderListEmpty.setVisibility(View.VISIBLE)
             }
@@ -70,6 +76,12 @@ class HomeFragment : Fragment(), HomeAdapter.OnHomeItemClicked {
             ,"profile_img" to dataList.profile_img
             ,"date" to dataList.date)
         Navigation.findNavController(requireView()).navigate(R.id.action_homeFragment_to_detailsOrderFragment,bundle)
+    }
+
+    override fun onDeleteItemClicked(dataList: HomeResponseModel) {
+        adapter.removeItem(dataList)
+        adapter.notifyDataSetChanged()
+
     }
 
 
