@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">taskdevartLab</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_order_list_empty">لا يوجد اي طالبات</string>
+    <string name="label_notification">الاشعارات</string>
+    <string name="label_name_shipment">اسم العميل</string>
+    <string name="labal_personal_data_phone">رقم الهاتف</string>
+    <string name="st_remove_trip">رفض</string>
+    <string name="st_detail_histore_trip">موافقة</string>
+    <string name="st_from_city">مكان الارسال</string>
+    <string name="st_to_city">مكان الوصول</string>
+    <string name="img">img</string>
+    <string name="directions">ألاتجاهات</string>
+    <string name="st_detail_trip">تاريخ الشحنة</string>
+    <string name="st_payment_shipment">تكلفة الشحنة</string>
+    <string name="desc_shipment">وصف الشحنة</string>
+    <string name="label_acceptShipment">تم الوصول</string>
+    <string name="labal_trip_cost">تكلفة الرحلة</string>
+    <string name="labal_pay_cost">المبلغ المدفوع</string>
+    <string name="label_next">التالي</string>
+    <string name="labal_trip_code">كود الشحنة</string>
+    <string name="label_done">تم التوصيل</string>
+    <string name="st_size_trip">نوع الشحنة</string>
+</resources>
