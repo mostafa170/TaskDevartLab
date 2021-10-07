@@ -8,7 +8,7 @@ using MVVM &amp; retrofit &amp; dataBinding &amp;recycler view &amp;card view &a
 <br/>
 Copy this is code to create api at google script 👇👇👇👇👇👇👇:<br/>
 var id = 'ID_SHEETS';
-var name = 'Sheet1';
+var name = 'NAME_SHEETS';
 
 function doGet(e) {
   var url = id;
@@ -17,7 +17,7 @@ function doGet(e) {
   var myData = SpreadsheetApp.openById(id);
   var sheet = myData.getSheetByName(name);
 
-  var json = convertSheet2Json(NAME_SHEETS);
+  var json = convertSheet2Json(sheet);
   return ContentService.createTextOutput(JSON.stringify(json))
     .setMimeType(ContentService.MimeType.JSON);
 }
